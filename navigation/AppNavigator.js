@@ -1,10 +1,12 @@
 import React from 'react';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
-import SampleScreen from '../screens/SampleScreen';
+import HomeScreen from '../screens/HomeScreen';
+import SearchScreen from '../screens/SearchScreen';
 
 const TabNavigator = createBottomTabNavigator({
-    Sample: SampleScreen
+    Home: HomeScreen,
+    Search: SearchScreen
 })
 
 export default createAppContainer(TabNavigator);

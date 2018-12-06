@@ -1,16 +1,16 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-export default class SampleScreen extends React.Component {
+export default class HomeScreen extends React.Component {
   static navigationOptions = {
-    title: 'Today',
+    title: 'Home',
   };
 
   render() {
     return (
       <View>
         <Text>
-          Sample Screen
+          Home Screen
         </Text>
       </View>
     );
