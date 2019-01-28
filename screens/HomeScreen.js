@@ -9,13 +9,20 @@ import Layout from '../constants/Layout';
 import config from '../config/config';
 
 const styles = StyleSheet.create({
-  header: {
-    textAlign: 'center',
-    fontSize: 28,
-    marginTop: 40,
+  container: {
+    marginTop: 25,
   },
   caption: {
-    textAlign: 'center',
+    marginHorizontal: 12,
+    marginVertical: 5,
+  },
+  emphasized: {
+    fontWeight: 'bold',
+    fontSize: 20,
+  },
+  separator: {
+    marginTop: 15,
+    borderBottomWidth: 1,
   },
 });
 
@@ -49,14 +56,16 @@ export default class HomeScreen extends React.Component {
     if (todaysAPOD) {
       return (
         <View style={styles.container}>
-          <Text style={styles.header}>Browse Astronomy pictures of the day!</Text>
-          <Image
-            style={{ width: Layout.window.width, height: 300 }}
-            source={{ uri: todaysAPOD.url }}
-          />
-          <Text style={styles.caption}>{todaysAPOD.title}</Text>
-          <Text style={styles.caption}>{todaysAPOD.copyright}</Text>
-          <Text style={styles.caption}>{todaysAPOD.date}</Text>
+          <View style={styles.apod}>
+            <Text style={[styles.emphasized, styles.caption]}>{todaysAPOD.date}</Text>
+            <Image
+              style={{ width: Layout.window.width, height: 300 }}
+              source={{ uri: todaysAPOD.url }}
+            />
+            <Text style={[styles.emphasized, styles.caption]}>{todaysAPOD.title}</Text>
+            <Text style={styles.caption}>{todaysAPOD.copyright}</Text>
+            <View style={styles.separator} />
+          </View>
         </View>
       );
     }
